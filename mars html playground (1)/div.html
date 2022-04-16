@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Mars</title>
+  <link rel="stylesheet" href="mainstyle.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+  
+</head>
+<body onload="ready()">
+  
+  <div id="top" align="center"><img src="mars.png" alt="mars" width="149" height="101">
+  </div>
+  
+  
+  
+  <div align="center"><h1>3 # Divler</h1>
+    <img src="images\4.png"  width="800"/>
+    
+  
+  <h2>Bir Sonraki bolume Gecmek icin soru 👇</h2>
+  <h1>Bos bir div olustur!</h1>
+  <span id="nextbtn"></span>
+
+  </div>
+  <br><br><br><br><br>
+  
+  <button onclick="lightmode()">Açık Mod</button> <button onclick="darkmode()">Koyu Mod</button> <button onclick="update()">Kodu Çalıştır!</button> <button onclick="checkcode()">Kodunu Test Et!</button>
+  <script>
+     
+    function checkcode(){
+      
+      var frameObj = 
+      document.getElementById("iframe"); //iframe'i al
+      
+
+      var frameContent = frameObj.contentWindow.document.body.innerHTML;//iframe'in içindeki bilgileri al
+
+      output = frameContent.replace(/\s+/g, '');//boşlukları sil
+
+      console.log(typeof output);//console log
+      
+
+
+      if(output == "<div></div>"){
+        alert("Kodun Dogru! Bir sonraki bölüme geçebilirsin!");
+        document.getElementById("nextbtn").innerHTML = '<button><a href="imgs.html">Sonraki Bolum!</a></button>';
+      }else{
+        alert("Yanlış, yazıma dikkat etmelisin...");
+      }
+      console.log(output);
+      
+      
+
+    }
+  </script>
+  
+  <div id="container">
+
+    <div id="editor">
+
+    </div>
+    <iframe id="iframe" frameborder="0"></iframe>
+   
+  </div>
+  <script src="maincode.js"></script>
+</body>
+</html>
